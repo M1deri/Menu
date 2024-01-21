@@ -55,37 +55,40 @@ int main()
             }
         case 2:
             {
-                if (n == 0) {
-                cout << "Tablica jest pusta. Nie mozna wstawic elementu." << endl;
-                break;
-            }
+                if (n == 0) 
+                {
+                    cout << "Tablica jest pusta. Nie mozna wstawic elementu." << endl;
+                    break;
+                }
 
-            int index;
-            cout << "Podaj indeks, na ktory chcesz wstawic element: ";
-            cin >> index;
+                int index;
+                cout << "Podaj indeks, na ktory chcesz wstawic element: ";
+                cin >> index;
 
-            if (index < 0 || index > n) {
-                cout << "Nieprawidlowy indeks" << endl;
-                break;
-            }
+                if (index < 0 || index > n) 
+                {
+                    cout << "Nieprawidlowy indeks" << endl;
+                    break;
+                }
 
-            int wartosc;
-            cout << "Podaj wartosc elementu: ";
-            cin >> wartosc;
+                int wartosc;
+                cout << "Podaj wartosc elementu: ";
+                cin >> wartosc;
 
-            wskaz* tmp = new int[n + 1];
+                wskaz* tmp = new int[n + 1];
 
-            for (int i = 0; i < index; i++) {
-                tmp[i] = p[i];
-            }
-            tmp[index] = wartosc;
-            for (int i = index + 1; i <= n; i++) {
-                tmp[i] = p[i - 1];
-            }   
-            delete[] p;
-            p = tmp;
-            n++;
-
+                for (int i = 0; i < index; i++) 
+                {
+                    tmp[i] = p[i];
+                }
+                tmp[index] = wartosc;
+                    for (int i = index + 1; i <= n; i++) 
+                    {
+                    tmp[i] = p[i - 1];
+                }   
+                delete[] p;
+                p = tmp;
+                n++;
                 break;
             }
         case 3:
@@ -120,7 +123,7 @@ int main()
                 delete[] p;
                 p = tmp;
                 n--;
-                cout << "Element o indeksie zostal usuniety." << endl;
+                cout << "Element zostal usuniety." << endl;
 
                 break;
             }
